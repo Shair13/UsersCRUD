@@ -1,7 +1,7 @@
 package pl.coderslab.entity;
 
 import pl.coderslab.jbcrypt.BCrypt;
-import pl.coderslab.oppdao.DbUtil;
+import pl.coderslab.utils.DbUtil;
 
 import java.sql.*;
 import java.util.Arrays;
@@ -12,10 +12,9 @@ public class UserDao {
     private static final String UPDATE_USER_QUERY = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?;";
     private static final String DELETE_USER_QUERY = "DELETE FROM users WHERE id = ?;";
     private static final String FIND_ALL_USERS_QUERY = "SELECT * FROM users";
-    private static final String DATABASE = "workshop2";
 
     public User create(User user) {
-        try (PreparedStatement preStmt = DbUtil.getConnection(DATABASE).prepareStatement(CREATE_USER_QUERY, Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement preStmt = DbUtil.getConnection().prepareStatement(CREATE_USER_QUERY, Statement.RETURN_GENERATED_KEYS)) {
             preStmt.setString(1, user.getUserName());
             preStmt.setString(2, user.getEmail());
             preStmt.setString(3, BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
@@ -33,7 +32,7 @@ public class UserDao {
     }
 
     public User read(int userId) {
-        try (PreparedStatement preStmt = DbUtil.getConnection(DATABASE).prepareStatement(READ_USER_QUERY)) {
+        try (PreparedStatement preStmt = DbUtil.getConnection().prepareStatement(READ_USER_QUERY)) {
             preStmt.setInt(1, userId);
             ResultSet rs = preStmt.executeQuery();
             if (rs.next()) {
@@ -51,7 +50,7 @@ public class UserDao {
     }
 
     public void update(User user) {
-        try (PreparedStatement preStmt = DbUtil.getConnection(DATABASE).prepareStatement(UPDATE_USER_QUERY)) {
+        try (PreparedStatement preStmt = DbUtil.getConnection().prepareStatement(UPDATE_USER_QUERY)) {
             preStmt.setString(1, user.getUserName());
             preStmt.setString(2, user.getEmail());
             preStmt.setString(3, BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
@@ -63,7 +62,7 @@ public class UserDao {
     }
 
     public void delete(int userId) {
-        try (PreparedStatement preStmt = DbUtil.getConnection(DATABASE).prepareStatement(DELETE_USER_QUERY)) {
+        try (PreparedStatement preStmt = DbUtil.getConnection().prepareStatement(DELETE_USER_QUERY)) {
             preStmt.setInt(1, userId);
             preStmt.executeUpdate();
         } catch (SQLException e) {
@@ -73,7 +72,7 @@ public class UserDao {
 
     public User[] findAll() {
         User[] users = new User[0];
-        try (PreparedStatement preStmt = DbUtil.getConnection(DATABASE).prepareStatement(FIND_ALL_USERS_QUERY)) {
+        try (PreparedStatement preStmt = DbUtil.getConnection().prepareStatement(FIND_ALL_USERS_QUERY)) {
             ResultSet rs = preStmt.executeQuery();
             while (rs.next()) {
                 User user = new User();
