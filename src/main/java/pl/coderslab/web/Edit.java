@@ -26,6 +26,14 @@ public class Edit extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/user/list");
+        User user = new User();
+        user.setId(Integer.parseInt(request.getParameter("id")));
+        user.setUserName(request.getParameter("userName"));
+        user.setEmail(request.getParameter("userEmail"));
+        user.setPassword(request.getParameter("userPassword"));
+        UserDao userDao = new UserDao();
+        userDao.update(user);
+        response.sendRedirect(request.getContextPath() + "/user/list");
+
     }
 }
