@@ -34,6 +34,5 @@ public class Edit extends HttpServlet {
         UserDao userDao = new UserDao();
         userDao.update(user);
         response.sendRedirect(request.getContextPath() + "/user/list");
-
     }
 }
