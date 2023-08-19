@@ -10,10 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00eead93-cf24-456d-886f-c689482ff387" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/web/Add.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/web/Delete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/web/Edit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/web/List.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/coderslab/web/Show.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/users/add.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/users/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/users/show.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/users/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/users/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/UsersCRUD-1.0-SNAPSHOT/users/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/UsersCRUD-1.0-SNAPSHOT/users/list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +31,7 @@
       <list>
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="Servlet" />
       </list>
     </option>
   </component>
@@ -60,7 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "header-footer",
+    "git-widget-placeholder": "develop",
     "last_opened_file_path": "/home/szer13/CodersLab/UsersCRUD/src/main/webapp/users",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -185,7 +192,7 @@
       <workItem from="1692367023025" duration="994000" />
       <workItem from="1692368027615" duration="5196000" />
       <workItem from="1692377122781" duration="5548000" />
-      <workItem from="1692428596766" duration="5876000" />
+      <workItem from="1692428596766" duration="7506000" />
     </task>
     <servers />
   </component>
